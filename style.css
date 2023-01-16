@@ -212,3 +212,101 @@ body {
 	height: 100%;
 	filter: drop-shadow(0 0 15px var(--clr));
 }
+
+/* effect 3 Focus */
+
+.effect3 {
+	width: 100%;
+	min-height: 30rem;
+	padding: 3rem;
+	margin-top: 4rem;
+	background-image: linear-gradient(45deg, #ff0057, #2196f3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.effect3 h1 {
+	display: flex;
+	gap: 4rem;
+	font-size: 8rem;
+	cursor: pointer;
+	color: #fff;
+}
+
+.effect3 h1 span {
+	width: 5.5rem;
+	display: block;
+	text-align: center;
+	position: relative;
+	transition: 0.5s ease-in-out;
+	flex-shrink: 0;
+}
+.effect3 h1 > span {
+	filter: blur(8px);
+}
+.effect3 h1 > span:is(:hover, :focus) {
+	filter: blur(0);
+}
+.effect3 span span::before {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	top: 0;
+	left: 0;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	transform: translate(-50%, -50%);
+}
+
+.effect3 h1 > span::before {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	top: 0;
+	right: 0;
+	transform: translate(50%, -50%);
+}
+
+.effect3 span span::after {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	bottom: 0;
+	left: 0;
+	border-bottom: 2px solid #fff;
+	border-left: 2px solid #fff;
+	transform: translate(-50%, 50%);
+}
+
+.effect3 h1 > span::after {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	right: 0;
+	bottom: 0;
+	transform: translate(50%, 50%);
+}
+
+.effect3 span::before {
+	opacity: 0;
+	transition: 0.5s ease-in-out;
+}
+
+.effect3 span::after {
+	opacity: 0;
+	transition: 0.5s ease-in-out;
+}
+
+.effect3 span:is(:hover, :focus)::before,
+.effect3 span:is(:hover, :focus)::after {
+	opacity: 1;
+}
