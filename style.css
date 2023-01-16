@@ -151,3 +151,64 @@ body {
 	bottom: 50%;
 	transform: scaleY(0);
 }
+
+/* effect2 */
+
+.effect2 {
+	width: 100%;
+	min-height: 30rem;
+	padding: 3rem;
+	margin-top: 4rem;
+	background-color: #252839;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.effect2 div {
+	width: 12rem;
+	height: 12rem;
+	flex-shrink: 0;
+	color: #fff;
+	font-size: 10rem;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), 10px 10px 5px rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.effect2 b {
+	-webkit-text-stroke: 3px var(--clr);
+	color: transparent;
+	transition: 0.3s 0.3s linear;
+	overflow: hidden;
+	display: block;
+}
+
+.effect2 div:hover b {
+	opacity: 0;
+	transition: 0.1s linear;
+}
+
+.effect2 div::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 10rem;
+	color: var(--clr);
+	font-weight: 700;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+	border-bottom: 7px solid var(--clr);
+	transition: 0.5s linear;
+}
+
+.effect2 div:hover::before {
+	height: 100%;
+	filter: drop-shadow(0 0 15px var(--clr));
+}
