@@ -310,3 +310,64 @@ body {
 .effect3 span:is(:hover, :focus)::after {
 	opacity: 1;
 }
+
+/* effect 4 */
+.effect4 {
+	width: 100%;
+	min-height: 30rem;
+	padding: 3rem;
+	margin-top: 4rem;
+	background-image: linear-gradient(45deg, #242436, #321d82);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.effect4 > div {
+	width: 500px;
+	height: 350px;
+	position: relative;
+}
+
+.effect4 div div {
+	position: absolute;
+	inset: 0;
+	background-image: url(img/flowers.jpg);
+	background-size: cover;
+	transition: 0.5s ease-in-out;
+}
+
+.effect4 div div:first-of-type {
+	clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+	transition-delay: 0;
+}
+
+.effect4 div:is(:hover, :focus) div:first-of-type {
+	transform: translate(-5%, -20%) rotate(-15deg);
+}
+
+.effect4 div div:nth-of-type(2) {
+	clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+	transition-delay: 0.2s;
+}
+
+.effect4 div:is(:hover, :focus) div:nth-of-type(2) {
+	transform: translate(7%, -20%) rotate(15deg);
+}
+
+.effect4 div div:nth-of-type(3) {
+	clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+	transition-delay: 0.4s;
+}
+.effect4 div:is(:hover, :focus) div:nth-of-type(3) {
+	transform: translate(-5%, 20%) rotate(15deg);
+}
+.effect4 div div:nth-of-type(4) {
+	background-color: #1d8222;
+	clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+	transition-delay: 0.6s;
+}
+
+.effect4 div:is(:hover, :focus) div:nth-of-type(4) {
+	transform: translate(5%, 20%) rotate(-15deg);
+}
